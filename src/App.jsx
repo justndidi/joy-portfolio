@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 
-import heroPortrait from './assets/hero-portrait.png'
-import engineeringAiDss   from './assets/engineering-ai-dss.png'
-import newGeneration from './assets/new-generation.png'
-import nodeclassProject from './assets/nodeclass-project.png'
+// import heroPortrait from './assets/hero-portrait.png'
+
+import Avatar3D from './components/Avatar3D'
+import PortfolioProjects from './components/PortfolioProjects'
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -189,6 +189,7 @@ function App() {
 
           <a href="#home">Home</a>
           <a href="#about">About</a>
+          <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
@@ -242,6 +243,10 @@ function App() {
           About
         </a>
 
+        <a href="#skills" onClick={closeMenu}>
+          Skills
+        </a>
+
         <a href="#projects" onClick={closeMenu}>
           Projects
         </a>
@@ -275,23 +280,27 @@ function App() {
 
           <div className="hero-content">
 
+            <div className="hero-status">
+              <span className="hero-status-dot" />
+              OPEN TO REMOTE OPPORTUNITIES
+            </div>
+
             <p className="eyebrow">
-              SOFTWARE DEVELOPER
+              SOFTWARE DEVELOPER <span className="eyebrow-divider">/</span> CREATIVE BUILDER
             </p>
 
             <h1>
-              I build web
+              I build digital
               <br />
-              applications that
+              experiences with
               <br />
-              make <span>an impact.</span>
+              <span>purpose.</span>
             </h1>
 
             <p className="hero-text">
-              I'm Joy Jegbefume, a Computer Science student
-              and full-stack developer. I enjoy turning ideas
-              into real products using JavaScript, React,
-              Node.js and MongoDB.
+              I'm Joy Jegbefume, a Computer Science student and
+              full-stack developer who enjoys turning thoughtful
+              ideas into useful, well-crafted web experiences.
             </p>
 
             <div className="hero-buttons">
@@ -300,7 +309,7 @@ function App() {
                 href="#projects"
                 className="primary-button"
               >
-                View My Projects →
+                Explore my work <span aria-hidden="true">↗</span>
               </a>
 
               <a
@@ -308,49 +317,72 @@ function App() {
                 download
                 className="secondary-button"
               >
-                Download CV ↓
+                Download CV <span aria-hidden="true">↓</span>
               </a>
 
             </div>
 
-            <div className="social-links">
+            <div className="hero-social-row">
+              <span className="hero-social-label">FIND ME ON</span>
 
-              <a
-                href="https://github.com/justndidi"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub
-              </a>
+              <div className="social-links">
 
-              <a
-                href="https://www.linkedin.com/in/joy-jegbefume-96ba89391"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </a>
+                <a
+                  href="https://github.com/justndidi"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub <span aria-hidden="true">↗</span>
+                </a>
 
-              <a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=jegbefumejoy0@gmail.com"
-  target="_blank"
-  rel="noopener noreferrer"
+                <a
+                  href="https://www.linkedin.com/in/joy-jegbefume-96ba89391"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LinkedIn <span aria-hidden="true">↗</span>
+                </a>
 
->
-                Email
-              </a>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=jegbefumejoy0@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Email <span aria-hidden="true">↗</span>
+                </a>
 
+              </div>
             </div>
 
           </div>
 
 
-          <div className="hero-image">
+          <div className="hero-image hero-visual" aria-label="Portrait area reserved for Joy's interactive 3D avatar">
 
-            <img
-              src={heroPortrait}
-              alt="Joy Jegbefume, Software Developer"
-            />
+            <div className="hero-visual-glow" />
+            <div className="hero-orbit hero-orbit-one" />
+            <div className="hero-orbit hero-orbit-two" />
+
+          <div className="hero-avatar-canvas">
+  <Avatar3D />
+</div>
+
+<p className="avatar-interaction-hint">
+  <span className="avatar-interaction-dot"></span>
+  CLICK OR TAP ME TO SAY HELLO
+</p>
+
+            <div className="hero-visual-label hero-visual-label-top">
+              <span className="hero-label-dot" />
+              DIGITAL CREATOR / 001
+            </div>
+
+            <div className="hero-visual-label hero-visual-label-bottom">
+              <span>CURIOUS BY DESIGN</span>
+              <strong>JOY J.</strong>
+            </div>
+
+            <span className="hero-visual-index">01 — 04</span>
 
           </div>
 
@@ -365,124 +397,75 @@ function App() {
           id="about"
           className="about-section"
         >
-
           <div className="section-heading">
-
-            <p className="eyebrow">
-              ABOUT
+            <p className="eyebrow">A LITTLE ABOUT ME</p>
+            <h2>Curious mind. <span>Practical builder.</span></h2>
+            <p>
+              I enjoy bringing thoughtful ideas to life through technology,
+              design, and a little bit of experimentation.
             </p>
-
-            <h2>
-              More about me
-            </h2>
-
           </div>
-
 
           <div className="about-content">
-
             <div className="about-text">
-
               <p>
-                I'm a Computer Science undergraduate at the
-                Federal University of Petroleum Resources,
-                Effurun, with hands-on experience in frontend
-                and backend web development.
+                I'm a Computer Science student at the Federal University of
+                Petroleum Resources, Effurun, with hands-on experience building
+                responsive web interfaces and backend services.
               </p>
 
               <p>
-                I enjoy building responsive web applications,
-                working with APIs and databases, and turning
-                ideas into practical software. I'm particularly
-                interested in creating products that are simple
-                to use and solve real problems.
+                During my industrial training at HiiT PLC, I gained practical
+                experience in frontend development, backend development,
+                databases, and software development workflows. I've continued
+                applying those skills through personal and collaborative projects.
               </p>
 
               <p>
-                Through my software development training at
-                HiiT Plc and my personal projects, I've gained
-                practical experience working across both
-                frontend and backend development.
+                I enjoy working across the stack, learning new tools, and
+                creating digital products that are useful, intuitive, and
+                thoughtfully put together.
               </p>
 
-              <a
-                href="#contact"
-                className="primary-button"
-              >
-                Get in touch →
+              <a href="#contact" className="primary-button">
+                Let's work together <span aria-hidden="true">↗</span>
               </a>
-
             </div>
-
 
             <div className="about-highlights">
-
               <div className="highlight">
-
                 <span>01</span>
-
                 <div>
-                  <h3>Frontend</h3>
-
-                  <p>
-                    Building responsive and user-friendly
-                    interfaces.
-                  </p>
+                  <h3>Frontend development</h3>
+                  <p>Responsive interfaces, reusable components, and thoughtful user experiences.</p>
                 </div>
-
               </div>
 
-
               <div className="highlight">
-
                 <span>02</span>
-
                 <div>
-                  <h3>Backend</h3>
-
-                  <p>
-                    Developing APIs, server-side logic and
-                    authentication.
-                  </p>
+                  <h3>Backend development</h3>
+                  <p>REST APIs, server-side logic, authentication, and application workflows.</p>
                 </div>
-
               </div>
 
-
               <div className="highlight">
-
                 <span>03</span>
-
                 <div>
-                  <h3>Database</h3>
-
-                  <p>
-                    Working with MongoDB and application data.
-                  </p>
+                  <h3>Working with data</h3>
+                  <p>Connecting applications to databases and managing application data.</p>
                 </div>
-
               </div>
-
 
               <div className="highlight">
-
                 <span>04</span>
-
                 <div>
-                  <h3>Always Learning</h3>
-
-                  <p>
-                    Continuously improving my development
-                    skills.
-                  </p>
+                  <h3>Always experimenting</h3>
+                  <p>Exploring new technologies and finding better ways to build.</p>
                 </div>
-
               </div>
-
             </div>
-
           </div>
-
         </section>
 
 
@@ -490,92 +473,73 @@ function App() {
             SKILLS
         ========================================== */}
 
-        <section className="skills-section">
-
+        <section className="skills-section" id="skills">
           <div className="skills-header">
-
             <div>
-
-              <p className="eyebrow">
-                SKILLS
-              </p>
-
-              <h2>
-                Technologies I work with
-              </h2>
-
+              <p className="eyebrow">MY TOOLKIT</p>
+              <h2>Tools I use to bring ideas to life.</h2>
             </div>
-
-            <p className="skills-note">
-              Always learning more →
-            </p>
-
+            <p className="skills-note">Learning, building, improving <span aria-hidden="true">↗</span></p>
           </div>
 
-
           <div className="skills-grid">
-
             <div className="skill-group">
-
+              <span className="skill-group-index">01 / INTERFACES</span>
               <h3>Frontend</h3>
-
               <div className="skill-list">
-
                 <span>HTML</span>
                 <span>CSS</span>
                 <span>JavaScript</span>
                 <span>React</span>
+                <span>TypeScript</span>
                 <span>Bootstrap</span>
-
               </div>
-
             </div>
 
-
             <div className="skill-group">
-
+              <span className="skill-group-index">02 / APPLICATIONS</span>
               <h3>Backend</h3>
-
               <div className="skill-list">
-
                 <span>Node.js</span>
                 <span>Express.js</span>
+                <span>Python</span>
+                <span>Django</span>
                 <span>REST APIs</span>
-
               </div>
-
             </div>
 
-
             <div className="skill-group">
-
-              <h3>Database</h3>
-
+              <span className="skill-group-index">03 / DATA</span>
+              <h3>Databases</h3>
               <div className="skill-list">
-
                 <span>MongoDB</span>
-
+                <span>PostgreSQL</span>
               </div>
-
             </div>
 
-
             <div className="skill-group">
-
+              <span className="skill-group-index">04 / WORKFLOW</span>
               <h3>Tools</h3>
-
               <div className="skill-list">
-
                 <span>Git</span>
                 <span>GitHub</span>
                 <span>VS Code</span>
-
+                <span>Vercel</span>
+                <span>Render</span>
               </div>
-
             </div>
 
+            <div className="skill-group">
+              <span className="skill-group-index">05 / EXPRESSION</span>
+              <h3>Motion & design</h3>
+              <div className="skill-list">
+                <span>GSAP</span>
+                <span>CSS Animation</span>
+                <span>Photoshop</span>
+                <span>Illustrator</span>
+              </div>
+            </div>
           </div>
-
         </section>
 
 
@@ -583,165 +547,170 @@ function App() {
             PROJECTS
         ========================================== */}
 
-        <section id="projects" className="projects-section">
-  <div className="section-heading reveal">
-    <span className="section-label">MY WORK</span>
-    <h2>Projects I've built.</h2>
-    <p>
-      A selection of projects where I've applied my frontend and backend
-      development skills to build practical web applications.
-    </p>
-  </div>
+        <PortfolioProjects />
+        {/* <section id="projects" className="projects-section">
+          <div className="projects-heading">
+            <div className="section-heading">
+              <p className="eyebrow">SELECTED WORK / 03 PROJECTS</p>
+              <h2>Ideas turned into <span>real things.</span></h2>
+              <p>
+                A selection of projects I've worked on while exploring ideas,
+                solving practical problems, and growing as a developer.
+              </p>
+            </div>
+            <span className="projects-side-note">DESIGNING · BUILDING · LEARNING</span>
+          </div>
 
-  <div className="projects-grid">
+          <div className="projects-grid">
+            <article className="project-card project-card-featured reveal">
+              <div className="project-image">
+                <img
+                  src={engineeringAiDss}
+                  alt="Engineering AI Decision Support System dashboard"
+                />
+                <span className="project-image-label">FEATURED PROJECT</span>
+              </div>
 
-    {/* Engineering AI DSS */}
-    <article className="project-card reveal">
-      <div className="project-image">
-        <img
-          src={engineeringAiDss}
-          alt="Engineering AI Decision Support System"
-        />
-      </div>
+              <div className="project-content">
+                <div className="project-meta">
+                  <span className="project-number">01</span>
+                  <span className="project-category">DECISION SUPPORT · FULL-STACK</span>
+                </div>
 
-      <div className="project-content">
-        <span className="project-number">01</span>
+                <h3>Engineering AI Decision Support System</h3>
 
-        <h3>Engineering AI Decision Support System</h3>
+                <p>
+                  A decision-support platform for evaluating chemical engineering
+                  service-firm opportunities in Nigeria's oil and gas sector.
+                  It uses AHP to calculate criteria weights and TOPSIS to rank
+                  the available alternatives.
+                </p>
 
-        <p>
-          An AI-powered decision support system designed to assist engineers
-          in evaluating business opportunities in Nigeria's oil and gas
-          sector using AHP and TOPSIS decision-making methods.
-        </p>
+                <div className="project-tech">
+                  <span>JavaScript</span>
+                  <span>Node.js</span>
+                  <span>Express.js</span>
+                  <span>AHP</span>
+                  <span>TOPSIS</span>
+                </div>
 
-        <div className="project-tech">
-          <span>JavaScript</span>
-          <span>Node.js</span>
-          <span>Express.js</span>
-          <span>REST API</span>
-        </div>
+                <div className="project-links">
+                  <a
+                    href="https://engineer-ai-dss-we9h.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Explore project <span aria-hidden="true">↗</span>
+                  </a>
+                  <a
+                    href="https://github.com/justndidi/EngineerAI-DSS"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Source code <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
 
-        <div className="project-links">
-  <a
-    href="https://engineer-ai-dss-we9h.vercel.app/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Live Demo ↗
-  </a>
+            <article className="project-card reveal">
+              <div className="project-image">
+                <img
+                  src={newGeneration}
+                  alt="New Generation music discovery website"
+                />
+              </div>
 
-  <a
-    href="https://github.com/justndidi/EngineerAI-DSS"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    GitHub ↗
-  </a>
-</div>
-      </div>
-    </article>
+              <div className="project-content">
+                <div className="project-meta">
+                  <span className="project-number">02</span>
+                  <span className="project-category">MUSIC DISCOVERY · FRONTEND</span>
+                </div>
 
+                <h3>New Generation</h3>
 
-    {/* New Generation */}
-    <article className="project-card reveal">
-      <div className="project-image">
-        <img
-          src={newGeneration}
-          alt="New Generation website"
-        />
-      </div>
+                <p>
+                  A music-discovery website designed to help visitors explore
+                  music genres and artists through an engaging, responsive
+                  interface with interactive artist details.
+                </p>
 
-      <div className="project-content">
-        <span className="project-number">02</span>
+                <div className="project-tech">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JavaScript</span>
+                  <span>Bootstrap</span>
+                </div>
 
-        <h3>New Generation</h3>
+                <div className="project-links">
+                  <a
+                    href="https://new-generation-ashen.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Explore project <span aria-hidden="true">↗</span>
+                  </a>
+                  <a
+                    href="https://github.com/justndidi/new-generation"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Source code <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
 
-        <p>
-          A full-stack web application built with a separate frontend and
-          backend architecture, featuring authentication, CRUD operations,
-          REST APIs, database integration, and administrative functionality.
-        </p>
+            <article className="project-card reveal">
+              <div className="project-image">
+                <img
+                  src={nodeclassProject}
+                  alt="Nodeclass full-stack web application"
+                />
+              </div>
 
-        <div className="project-tech">
-          <span>JavaScript</span>
-          <span>Node.js</span>
-          <span>Express.js</span>
-          <span>MongoDB</span>
-          <span>Bootstrap</span>
-        </div>
+              <div className="project-content">
+                <div className="project-meta">
+                  <span className="project-number">03</span>
+                  <span className="project-category">WEB APPLICATION · FULL-STACK</span>
+                </div>
 
-        <div className="project-links">
-          <a
-            href="https://new-generation-ashen.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Live Demo ↗
-          </a>
+                <h3>Nodeclass Project</h3>
 
-          <a
-            href="https://github.com/justndidi/new-generation"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub ↗
-          </a>
-        </div>
-      </div>
-    </article>
+                <p>
+                  A full-stack application demonstrating authentication,
+                  REST API development, CRUD operations, validation,
+                  middleware, and database integration.
+                </p>
 
+                <div className="project-tech">
+                  <span>JavaScript</span>
+                  <span>Node.js</span>
+                  <span>Express.js</span>
+                  <span>MongoDB</span>
+                  <span>REST API</span>
+                </div>
 
-    {/* Nodeclass */}
-    <article className="project-card reveal">
-      <div className="project-image">
-        <img
-          src={nodeclassProject}
-          alt="Nodeclass full-stack project"
-        />
-      </div>
-
-      <div className="project-content">
-        <span className="project-number">03</span>
-
-        <h3>Nodeclass Project</h3>
-
-        <p>
-          A full-stack application demonstrating user authentication,
-          token handling, REST APIs, CRUD operations, database integration,
-          validation, middleware, and structured backend architecture.
-        </p>
-
-        <div className="project-tech">
-          <span>JavaScript</span>
-          <span>Node.js</span>
-          <span>Express.js</span>
-          <span>MongoDB</span>
-          <span>REST API</span>
-        </div>
-
-        <div className="project-links">
-  <a
-    href="https://nodeclass-project.vercel.app/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Live Demo ↗
-  </a>
-
-  <a
-    href="https://github.com/justndidi/Nodeclass-project"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    GitHub ↗
-  </a>
-</div>
-      </div>
-    </article>
-
-  </div>
-</section>
+                <div className="project-links">
+                  <a
+                    href="https://nodeclass-project.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Explore project <span aria-hidden="true">↗</span>
+                  </a>
+                  <a
+                    href="https://github.com/justndidi/Nodeclass-project"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Source code <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section> */}
 
 
         {/* ==========================================
@@ -779,7 +748,7 @@ function App() {
           <div className="experience-item">
 
             <div className="experience-date">
-              May 2026 — Present
+              May 11, 2026 — October 20, 2026
             </div>
 
 

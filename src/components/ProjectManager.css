@@ -1,0 +1,482 @@
+
+/* PROJECT MANAGER */
+
+.pm-wrapper {
+  margin-top: 55px;
+  color: #f3eff8;
+}
+
+.pm-heading,
+.pm-list-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.pm-heading h2 {
+  font: 400 clamp(34px, 5vw, 54px) Georgia, serif;
+  margin: 12px 0;
+}
+
+.pm-heading p:not(.admin-eyebrow) {
+  color: #aaa3b5;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.pm-add-button,
+.pm-publish-button {
+  background: #b9a0f5;
+  color: #17131f;
+  border: none;
+  border-radius: 9px;
+  padding: 14px 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pm-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 30px 0 40px;
+}
+
+.pm-stat,
+.pm-form-panel,
+.pm-project-item,
+.pm-empty {
+  background: #1b1823;
+  border: 1px solid #393044;
+  border-radius: 15px;
+}
+
+.pm-stat {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pm-stat span {
+  color: #aaa3b5;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.pm-stat strong {
+  font: 400 36px Georgia, serif;
+}
+
+.pm-form-panel {
+  padding: clamp(22px, 4vw, 40px);
+  margin-bottom: 40px;
+}
+
+.pm-form-heading h3 {
+  font: 400 32px Georgia, serif;
+}
+
+.pm-form,
+.pm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pm-form {
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.pm-field label {
+  color: #e7dff0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pm-field input,
+.pm-field textarea {
+  width: 100%;
+  padding: 14px 15px;
+  background: #121016;
+  border: 1px solid #393044;
+  border-radius: 8px;
+  color: white;
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+.pm-field input:focus,
+.pm-field textarea:focus {
+  border-color: #b9a0f5;
+}
+
+.pm-field textarea {
+  resize: vertical;
+}
+
+.pm-field small {
+  color: #898093;
+  font-size: 11px;
+}
+
+.pm-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.pm-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #d2c8dd;
+  font-size: 13px;
+}
+
+.pm-checkbox input {
+  accent-color: #b9a0f5;
+}
+
+.pm-form-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pm-draft-button {
+  border: 1px solid #51465e;
+  background: transparent;
+  color: #f3eff8;
+  padding: 14px 20px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.pm-form-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pm-list-heading {
+  margin: 30px 0 20px;
+}
+
+.pm-list-heading h3 {
+  font: 400 27px Georgia, serif;
+}
+
+.pm-list-heading span {
+  color: #aaa3b5;
+  font-size: 12px;
+}
+
+.pm-project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.pm-project-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px;
+}
+
+.pm-project-image,
+.pm-image-placeholder {
+  width: 90px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  object-fit: cover;
+}
+
+.pm-image-placeholder {
+  display: grid;
+  place-items: center;
+  background: #302740;
+  color: #b9a0f5;
+  font-size: 24px;
+}
+
+.pm-project-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.pm-project-info h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.pm-project-info p {
+  margin: 0 0 12px;
+  color: #aaa3b5;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.pm-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pm-project-tags span {
+  padding: 5px 9px;
+  border-radius: 30px;
+  background: #302740;
+  color: #cbb9f5;
+  font-size: 10px;
+}
+
+.pm-status {
+  flex-shrink: 0;
+  border-radius: 30px;
+  padding: 7px 11px;
+  font-size: 11px;
+}
+
+.pm-status.published {
+  background: #243a31;
+  color: #b8e4d2;
+}
+
+.pm-status.draft {
+  background: #393044;
+  color: #c9b6e5;
+}
+
+.pm-empty {
+  padding: 35px;
+  text-align: center;
+  color: #aaa3b5;
+}
+
+.pm-empty h3 {
+  color: #f3eff8;
+}
+
+.pm-error,
+.pm-success {
+  margin: 16px 0;
+  padding: 13px 15px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.pm-error {
+  color: #ffbcbc;
+  background: #45272d;
+}
+
+.pm-success {
+  color: #b8e4d2;
+  background: #243a31;
+}
+
+@media (max-width: 700px) {
+  .pm-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pm-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pm-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .pm-project-item {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .pm-status {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .pm-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .pm-project-image,
+  .pm-image-placeholder {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+/* =========================================
+   PROJECT MANAGER — NEW ACTIONS
+========================================= */
+
+.pm-item-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.pm-item-actions button {
+  padding: 9px 14px;
+  border: 1px solid #51465e;
+  border-radius: 7px;
+  background: transparent;
+  color: #e7dff0;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pm-item-actions button:hover:not(:disabled) {
+  border-color: #b9a0f5;
+  background: rgba(185, 160, 245, 0.1);
+  color: #b9a0f5;
+}
+
+.pm-item-actions .pm-delete-action {
+  color: #ffaaaa;
+  border-color: rgba(255, 130, 130, 0.25);
+}
+
+.pm-item-actions .pm-delete-action:hover:not(:disabled) {
+  background: rgba(255, 130, 130, 0.1);
+  color: #ffc5c5;
+}
+
+.pm-item-actions button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Delete confirmation */
+
+.pm-delete-confirm {
+  margin-top: 14px;
+  padding: 18px;
+  background: #2b1c25;
+  border: 1px solid rgba(255, 160, 160, 0.2);
+  border-radius: 10px;
+}
+
+.pm-delete-confirm p {
+  color: #ffd0d0;
+  font-size: 12px;
+  margin: 0 0 14px;
+}
+
+.pm-delete-confirm button {
+  padding: 9px 13px;
+  margin-right: 8px;
+  border-radius: 7px;
+  border: 1px solid #69434b;
+  background: #49252f;
+  color: #ffe3e3;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.pm-delete-confirm button:last-child {
+  background: transparent;
+  color: #d9ccd9;
+}
+
+/* Image upload */
+
+.pm-field input[type="file"] {
+  cursor: pointer;
+  color: #bfb2cc;
+}
+
+.pm-field input[type="file"]::file-selector-button {
+  margin-right: 15px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 7px;
+  background: #b9a0f5;
+  color: #17131f;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.pm-image-preview {
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #393044;
+  background: #121016;
+}
+
+.pm-image-preview img {
+  width: min(100%, 350px);
+  max-height: 220px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.pm-image-preview p {
+  color: #c9b6e5;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.pm-cancel-button {
+  padding: 14px 20px;
+  border: 1px solid #51465e;
+  border-radius: 9px;
+  background: transparent;
+  color: #c9bfd2;
+  cursor: pointer;
+}
+
+.pm-cancel-button:hover {
+  color: white;
+  border-color: #b9a0f5;
+}
+
+.pm-project-item {
+  align-items: flex-start;
+}
+
+.pm-project-image,
+.pm-image-placeholder {
+  object-fit: cover;
+}
+
+@media (max-width: 650px) {
+  .pm-form-actions {
+    flex-direction: column;
+  }
+
+  .pm-form-actions button {
+    width: 100%;
+  }
+
+  .pm-project-item {
+    gap: 14px;
+  }
+
+  .pm-project-info {
+    flex-basis: calc(100% - 120px);
+  }
+
+  .pm-status {
+    margin-left: 0;
+  }
+
+  .pm-delete-confirm button {
+    margin-bottom: 8px;
+  }
+}
